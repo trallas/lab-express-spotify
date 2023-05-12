@@ -28,5 +28,12 @@ app.use(express.static(__dirname + '/public'));
 const SpotifyWebApi = require('spotify-web-api-node');
 
 // Our routes go here:
+app.get("/", (req, res) => {
+  res.render("index", {layout: false});
+});
+app.get("/artist-search", (req, res) => {
+  console.log(req.query);
+  let artist = req.query.artistSearch;
+}
 
 app.listen(3000, () => console.log('My Spotify project running on port 3000 🎧 🥁 🎸 🔊'));
